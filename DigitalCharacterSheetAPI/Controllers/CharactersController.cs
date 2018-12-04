@@ -29,5 +29,12 @@ namespace DigitalCharacterSheetAPI.Controllers
             return db.Characters.OrderBy(c => c.character_name).ToList();
         }
 
+        // GET: api/characters/5
+        [HttpGet("{id}")]
+        public Character get(int id)
+        {
+            return db.Characters.SingleOrDefault(c => c.id == id);
+        }
+
     }
 }

@@ -29,7 +29,7 @@ namespace DigitalCharacterSheetAPI.Controllers
 
         // GET: api/Characters1/5
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetCharacter([FromRoute] string id)
+        public async Task<IActionResult> GetCharacter([FromRoute] int id)
         {
             if (!ModelState.IsValid)
             {
@@ -98,7 +98,7 @@ namespace DigitalCharacterSheetAPI.Controllers
 
         // DELETE: api/Characters1/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteCharacter([FromRoute] string id)
+        public async Task<IActionResult> DeleteCharacter([FromRoute] int id)
         {
             if (!ModelState.IsValid)
             {

@@ -28,6 +28,7 @@ namespace DigitalCharacterSheetAPI.Controllers
         }
 
         // GET: api/Attributes/5
+        // return all attributes of a given character
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAttributeModel([FromRoute] string id)
         {
