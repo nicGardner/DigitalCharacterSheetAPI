@@ -8,11 +8,9 @@ using System.Threading.Tasks;
 namespace DigitalCharacterSheetAPI.Models   
 {
     [Table("Characters")]
-    public class Character
+    public class CharacterModel
     {
         [Key]
-        public int id { get; set; }
-
         [StringLength(30)]
         public string character_name { get; set; }
 

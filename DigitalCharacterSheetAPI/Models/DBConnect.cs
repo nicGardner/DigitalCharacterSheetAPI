@@ -21,7 +21,7 @@ namespace DigitalCharacterSheetAPI.Models
 
 
 
-        public DbSet<Character> Characters { get; set; }
+        public DbSet<CharacterModel> Characters { get; set; }
         public DbSet<AttributeModel> Attributes { get; set; }
 
         // using fluent api to create a composite primary key for Attribute

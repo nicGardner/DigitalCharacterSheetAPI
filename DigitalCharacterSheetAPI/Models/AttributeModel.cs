@@ -20,7 +20,6 @@ namespace DigitalCharacterSheetAPI.Models
 
         public int? attributeValue { get; set; }
 
-        public int? id { get; set; }
 
         //public virtual Character character { get; set; }
     }

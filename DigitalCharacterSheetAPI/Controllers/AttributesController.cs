@@ -29,15 +29,15 @@ namespace DigitalCharacterSheetAPI.Controllers
 
         // GET: api/Attributes/5
         // return all attributes of a given character
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetAttributeModel([FromRoute] string id)
+        [HttpGet("{id}, {id2}")]
+        public async Task<IActionResult> GetAttributeModel([FromRoute] string id, [FromRoute] string id2)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var attributeModel = await _context.Attributes.FindAsync(id);
+            var attributeModel = await _context.Attributes.FindAsync(id, id2);
 
             if (attributeModel == null)
             {
@@ -48,8 +48,8 @@ namespace DigitalCharacterSheetAPI.Controllers
         }
 
         // PUT: api/Attributes/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutAttributeModel([FromRoute] string id, [FromBody] AttributeModel attributeModel)
+        [HttpPut("{id}, {id2}")]
+        public async Task<IActionResult> PutAttributeModel([FromRoute] string id, [FromRoute] string id2, [FromBody] AttributeModel attributeModel)
         {
             if (!ModelState.IsValid)
             {
@@ -57,6 +57,11 @@ namespace DigitalCharacterSheetAPI.Controllers
             }
 
             if (id != attributeModel.characterName)
+            {
+                return BadRequest();
+            }
+
+            if (id2 != attributeModel.attributeName)
             {
                 return BadRequest();
             }
@@ -112,15 +117,15 @@ namespace DigitalCharacterSheetAPI.Controllers
         }
 
         // DELETE: api/Attributes/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteAttributeModel([FromRoute] string id)
+        [HttpDelete("{id}, {id2}")]
+        public async Task<IActionResult> DeleteAttributeModel([FromRoute] string id, [FromRoute] string id2)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var attributeModel = await _context.Attributes.FindAsync(id);
+            var attributeModel = await _context.Attributes.FindAsync(id, id2);
             if (attributeModel == null)
             {
                 return NotFound();
