@@ -8,15 +8,13 @@ using System.Threading.Tasks;
 namespace DigitalCharacterSheetAPI.Models
 {
     [Table("attributes")]
-    public class Attribute
+    public class AttributeModel
     {
-        [Key]
-        [Column(Order = 0)]
+
         [StringLength(30)]
         public string characterName { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
+
         [StringLength(20)]
         public string attributeName { get; set; }
 

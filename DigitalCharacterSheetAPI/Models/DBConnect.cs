@@ -22,7 +22,14 @@ namespace DigitalCharacterSheetAPI.Models
 
 
         public DbSet<Character> Characters { get; set; }
-        public DbSet<Attribute> Attributes { get; set; }
+        public DbSet<AttributeModel> Attributes { get; set; }
+
+        // using fluent api to create a composite primary key for Attribute
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<AttributeModel>()
+                .HasKey(a => new { a.characterName, a.attributeName });
+        }
     }
 
 }
