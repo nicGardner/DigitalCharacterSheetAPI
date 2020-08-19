@@ -3,7 +3,7 @@
 DigitalCharacterSheetAPI is an API for accessing the Characters and Attributes tables used in my DigitalCharacterSheet2 web app. 
 It allows for full CRUD functionality on both tables. 
 
-You can find the current build of the API online here: https://digital-character-sheet-api.azurewebsites.net
+Unfortunately, I am no longer hosting this web app online
 # Getting Started
 
 I coded this web app on Microsoft Visual Studio 2017 using the asp.net core api template, created the database with Microsoft SQL Server Management Studeio 2017, and hosted it on Microsoft Azure. I would recomend anyone using this code to download these tools.
